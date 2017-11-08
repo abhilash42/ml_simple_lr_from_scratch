@@ -32,4 +32,22 @@ y = b0 + b1*x
 plt.plot(x,y,color='#58b970',label='Regression line ')
 
 plt.scatter(X,Y,c='#ef5423',label='Scatter Plot')
-X
+
+
+rmse = 0
+for i in range(m):
+    y_pred = b0+b1*X[i]
+    rmse += (Y[i]-y_pred)**2
+rmse = np.sqrt(rmse/m)
+
+ss_m=0
+ss_cap=0
+
+for i in range(m):
+    y_pred = b0 + b1*X[i]
+    ss_cap += (y_pred-Y[i])**2
+    ss_m += (mean_y-Y[i])**2S
+r2 = 1 - (ss_cap/ss_m)
+
+print(rmse)
+print(r2)
