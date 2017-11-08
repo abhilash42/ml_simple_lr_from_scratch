@@ -46,7 +46,7 @@ ss_cap=0
 for i in range(m):
     y_pred = b0 + b1*X[i]
     ss_cap += (y_pred-Y[i])**2
-    ss_m += (mean_y-Y[i])**2S
+    ss_m += (mean_y-Y[i])**2
 r2 = 1 - (ss_cap/ss_m)
 
 print(rmse)
